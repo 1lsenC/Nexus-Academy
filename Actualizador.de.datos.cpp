@@ -17,48 +17,43 @@ int id;
     }
 }
 // Actualizar nota
-void nota()
-{
+void nota() {
     float nuevanota;
 
-    cout << "Ingrese ID del Alumno" << endl;
+    cout << "Ingrese ID del Alumno: ";
     cin >> id;
 
-    cout << "Ingrese nueva nota" << endl;
+    cout << "Ingrese nueva nota: ";
     cin >> nuevanota;
 
-    string query = " UPDATE alumnos SET nota_final = " + to_string(nuevanota) + " WHERE id = " + to_string(id);
+    string query = "UPDATE alumnos SET nota_final = " + to_string(nuevanota) +
+                   " WHERE id = " + to_string(id);
 
-    if (msyql_query(conn, query.c_str()) == 0)
-    {
-        cout << "Nota Actualizada";
+    if (mysql_query(conn, query.c_str()) == 0) {
+        cout << "Nota actualizada\n";
+    } else {
+        cout << "Error: " << mysql_error(conn) << endl;
     }
-    else
-    {
-        cout << "Error al actualizar nota";
-    }
-    return 0;
 }
 // Actualizar celular
-void celular()
-{
+void celular() {
     int celular;
-    cout << "Ingrese ID del Alumno" << endl;
+
+    cout << "Ingrese ID del Alumno: ";
     cin >> id;
 
-    cout << "Ingrese nuevo celular" << endl;
+    cout << "Ingrese nuevo celular: ";
     cin >> celular;
 
-    string query = " UPDATE alumnos SET celular = " + to_string(cel) + " WHERE id = " + to_string(id);
+    string query = "UPDATE alumnos SET celular = " + to_string(celular) +
+                   " WHERE id = " + to_string(id);
 
-    if (msyql_query(conn, query.c_str()) == 0)
-    {
-        cout << "Celular Actualizado";
+    if (mysql_query(conn, query.c_str()) == 0) {
+        cout << "Celular actualizado\n";
+    } else {
+        cout << "Error: " << mysql_error(conn) << endl;
     }
-    else
-    {
-        cout << "Error al actualizar celular";
-    }
+}
     int main() {
     conectar();
         if (conn != NULL) {
