@@ -8,7 +8,7 @@ void conectar()
 {
     conn = mysql_init(0);
 
-    conn = mysql_real_connect(conn, "localhost", "root", "TEAMOAKIVA369", "nexus_academy", 3306, NULL, 0);
+    conn = mysql_real_connect(conn, "localhost", "root", "MySQL serv con", "nexus_academy", 3306, NULL, 0);
 
     if (conn)
     {
