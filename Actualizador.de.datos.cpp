@@ -3,60 +3,91 @@
 
 using namespace std;
 
-MYSQL* conn;
-int id;
-    void conectar() {
+MYSQL *conn;
+
+void conectar()
+{
     conn = mysql_init(0);
 
     conn = mysql_real_connect(conn, "localhost", "root", "MySQL serv con", "nexus_academy", 3306, NULL, 0);
 
-    if (conn) {
+    if (conn)
+    {
         cout << "CONEXION EXITOSA" << endl;
-    } else {
+    }
+    else
+    {
         cout << "ERROR DE MYSQL" << mysql_error(conn) << endl;
     }
 }
 // Actualizar nota
-void nota() {
+void nota()
+{
     float nuevanota;
+    int id;
 
     cout << "Ingrese ID del Alumno: ";
     cin >> id;
 
-    cout << "Ingrese nueva nota: ";
+    cout << "Ingrese Nueva nota: ";
     cin >> nuevanota;
 
     string query = "UPDATE alumnos SET nota_final = " + to_string(nuevanota) +
                    " WHERE id = " + to_string(id);
 
-    if (mysql_query(conn, query.c_str()) == 0) {
+    if (mysql_query(conn, query.c_str()) == 0)
+    {
         cout << "Nota actualizada" << endl;
-    } else {
-        cout << "Error: " << mysql_error(conn) << endl;
+    }
+    else
+    {
+        cout << "Error al Actualizar Nota: " << mysql_error(conn) << endl;
     }
     " WHERE id = " + to_string(id);
+}
 
-    if (mysql_query(conn, query.c_str()) == 0) {
-         cout << "Celular actualizado";
-    } else {
-        cout << "Error: " << mysql_error(conn) << endl;
+void celular()
+{
+    int celular;
+    cout << "Ingrese ID del Alumno" << endl;
+    cin >> id;
+
+    cout << "Ingrese nuevo celular" << endl;
+    cin >> celular;
+
+    string query = "UPDATE -basededatos- SET -celular- =" + celular + " WHERE id = " + to_string(id);
+
+    if (msyql_query(conn, query.c_str()) == 0)
+    {
+        cout << "Celular Actualizado";
     }
-    if (conn != NULL) {
+    else
+    {
+        cout << "Error al actualizar celular";
+    }
+
+    if (conn != NULL)
+    {
         int opcion;
         cout << "1. Actualizar nota o 2. Actualizar celular" << endl;
         cout << "Elija opcion: " << endl;
         cin >> opcion;
 
-        if (opcion == 1) {
+        if (opcion == 1)
+        {
             nota();
-        } else if (opcion == 2) {
+        }
+        else if (opcion == 2)
+        {
             celular();
-        } else {
+        }
+        else
+        {
             cout << "Opcion invalida";
         }
 
         mysql_close(conn);
     }
-    
+
     return 0;
 }
