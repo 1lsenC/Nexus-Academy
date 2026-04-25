@@ -16,7 +16,7 @@ int main() {
     while (true) {
         int opcion;
         string consulta;
-        cout << "ANAISIS DE RENDIMIENTO" << endl;
+        cout << "ANALISIS DE RENDIMIENTO" << endl;
         cout << "1. Cuadro de honor" << endl;
         cout << "2. Alumnos en riesgo" << endl;
         cout << "3. Atras" << endl;
@@ -35,7 +35,7 @@ int main() {
 
             cout << "Mejores Notas" << endl;
             while ((fila = mysql_fetch_row(resultado)) != NULL) {
-            cout << fila[0] << " - " << fila[1] << " - " << fila[2] << fila[3] << " - Nota: " << fila[4] << endl;
+            cout << fila[0] << " - " << fila[1] << " - " << fila[2] << " - " << fila[3] << " - Nota: " << fila[4] << endl;
             }
             mysql_free_result(resultado);
             break;
@@ -47,7 +47,7 @@ int main() {
 
             cout << "Notas bajas" << endl;
             while ((fila = mysql_fetch_row(resultado)) != NULL) {
-            cout << fila[0] << " - " << fila[1] <<  " - " << fila[2] << fila[3] << " - Nota: " << fila[3] << endl;
+            cout << fila[0] << " - " << fila[1] <<  " - " << fila[2] << " - " << fila[3] << " - Nota: " << fila[4] << endl;
             }
             mysql_free_result(resultado);
             break;
