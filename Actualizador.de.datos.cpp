@@ -30,35 +30,19 @@ void nota() {
                    " WHERE id = " + to_string(id);
 
     if (mysql_query(conn, query.c_str()) == 0) {
-        cout << "Nota actualizada";
+        cout << "Nota actualizada" << endl;
     } else {
         cout << "Error: " << mysql_error(conn) << endl;
     }
-}
-// Actualizar celular
-void celular() {
-    int celular;
-
-    cout << "Ingrese ID del Alumno: ";
-    cin >> id;
-
-    cout << "Ingrese nuevo celular: ";
-    cin >> celular;
-
-    string query = "UPDATE alumnos SET celular = " + to_string(celular) +
-                   " WHERE id = " + to_string(id);
+    " WHERE id = " + to_string(id);
 
     if (mysql_query(conn, query.c_str()) == 0) {
-        cout << "Celular actualizado";
+         cout << "Celular actualizado";
     } else {
         cout << "Error: " << mysql_error(conn) << endl;
     }
-}
-    int main() {
-    conectar();
-        if (conn != NULL) {
+    if (conn != NULL) {
         int opcion;
-
         cout << "1. Actualizar nota o 2. Actualizar celular" << endl;
         cout << "Elija opcion: " << endl;
         cin >> opcion;
