@@ -3,23 +3,6 @@
 
 using namespace std;
 
-MYSQL *conn;
-
-void conectar()
-{
-    conn = mysql_init(0);
-
-    conn = mysql_real_connect(conn, "localhost", "root", "MySQL serv con", "nexus_academy", 3306, NULL, 0);
-
-    if (conn)
-    {
-        cout << "CONEXION EXITOSA" << endl;
-    }
-    else
-    {
-        cout << "ERROR DE MYSQL" << mysql_error(conn) << endl;
-    }
-}
 // Actualizar nota
 void nota()
 {
@@ -29,7 +12,7 @@ void nota()
     cout << "Ingrese ID del Alumno: ";
     cin >> id;
 
-    cout << "Ingrese Nueva nota: ";
+    cout << "Ingrese Nueva Nota: ";
     cin >> nuevanota;
 
     string query = "UPDATE alumnos SET nota_final = " + to_string(nuevanota) +
@@ -37,7 +20,7 @@ void nota()
 
     if (mysql_query(conn, query.c_str()) == 0)
     {
-        cout << "Nota actualizada" << endl;
+        cout << "Nota Actualizada" << endl;
     }
     else
     {
@@ -52,10 +35,10 @@ void celular()
     cout << "Ingrese ID del Alumno" << endl;
     cin >> id;
 
-    cout << "Ingrese nuevo celular" << endl;
+    cout << "Ingrese Nuevo Celular" << endl;
     cin >> celular;
 
-    string query = "UPDATE -basededatos- SET -celular- =" + celular + " WHERE id = " + to_string(id);
+    string query = "UPDATE alumnos SET celular =" + celular + " WHERE id = " + to_string(id);
 
     if (msyql_query(conn, query.c_str()) == 0)
     {
@@ -63,30 +46,7 @@ void celular()
     }
     else
     {
-        cout << "Error al actualizar celular";
-    }
-
-    if (conn != NULL)
-    {
-        int opcion;
-        cout << "1. Actualizar nota o 2. Actualizar celular" << endl;
-        cout << "Elija opcion: " << endl;
-        cin >> opcion;
-
-        if (opcion == 1)
-        {
-            nota();
-        }
-        else if (opcion == 2)
-        {
-            celular();
-        }
-        else
-        {
-            cout << "Opcion invalida";
-        }
-
-        mysql_close(conn);
+        cout << "Error al Actualizar Celular";
     }
 
     return 0;
