@@ -4,10 +4,9 @@
 using namespace std;
 
 // Actualizar nota
-void nuevanota()
+void actualizarNota()
 {
     float nuevanota;
-    int id;
 
     cout << "Ingrese ID del alumno: ";
     cin >> id;
@@ -30,7 +29,7 @@ void nuevanota()
 }
 
 // Actualizar celular
-void nuevocelular()
+void actualizarCelular()
 {
     string celular;
     cout << "Ingrese ID del alumno" << endl;
