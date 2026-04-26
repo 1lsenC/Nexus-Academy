@@ -22,7 +22,7 @@ CREATE TABLE alumnos (
     nota_final FLOAT);
 
 -Compilar la terminal en VS Code:
-g++ main.cpp -o main.exe -lmysql
+g++ main.cpp -o main.exe -Iinclude -Llib -lmysql
 -Ejecutar:
 En Windows el ejecutable sera main.exe
 En Linux/Mac el ejecutable sera ./main
@@ -37,7 +37,7 @@ Al iniciar el programa muestra un menu principal:
 -Para poder actualizar la nota le pedira al usuario su USUARIO y PASSWORD, si el acceso es concecido permitira modificar la nota final de un alumno.
 -En USUARIO debe poner "docente", y en PASSWORD debe poner "1234".
 4. Actualizacion de celular
--Permitira modificar el numero de celular de un alumno.
+-Permitira modificar el numero de celular de un alumno (poner punto no coma).
 5. Salir
 -Cierra el programa y la conexion a MySQL.
 
