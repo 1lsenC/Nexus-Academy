@@ -1,20 +1,3 @@
-#include <iostream>
-#include <mysql.h>
-
-using namespace std;
-
-    MYSQL* conn;
-    void conectar() {
-    conn = mysql_init(0);
-
-    conn = mysql_real_connect(conn, "localhost", "root", "TEAMOAKIVA369", "nexus_academy", 3306, NULL, 0);
-
-    if (conn) {
-        cout << "CONEXION EXITOSA" << endl;
-    } else {
-        cout << "ERROR DE MYSQL" << mysql_error(conn) << endl;
-    }
-}
 // Buscador
 void buscarAlumno() {
     int id;
@@ -42,16 +25,11 @@ void buscarAlumno() {
         cout << "Error"<< endl;
     }
     mysql_free_result(resultado);
+    cout << "Presione cualquier tecla para volver al menu principal: ";
+     cin.ignore();
+     cin.get();
+     consultasIndividuales();
 }
-int main() { 
-    conectar();
 
-    if (conn != NULL) {
-        buscarAlumno();
-        mysql_close(conn);
-    }
-
-    return 0;
-}
 
     
