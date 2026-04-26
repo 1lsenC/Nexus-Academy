@@ -1,14 +1,16 @@
 #include <iostream>
 
 using namespace std;
+// declarar
+bool loginDocente;
 
 // user docente
 // contraseña 1234
 
-void logindocente()
+bool loginDocente()
 {
     string user;
-    char pass;
+    string pass;
 
     cout << "Usuario: " << endl;
     cin >> user;
@@ -18,11 +20,12 @@ void logindocente()
 
     if (user == "docente" && pass == "1234")
     {
-        cout << "Acceso Consedido";
+        cout << "Acceso concedido";
+        return true;
     }
     else
     {
-        cout << "Acceso denegado" << endl;
+        cout << "Acceso denegado";
+        return false;
     }
-    return 0;
 }

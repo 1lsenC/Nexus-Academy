@@ -3,10 +3,13 @@
 
 using namespace std;
 
+int id;
+
 // Actualizar nota
 void actualizarNota()
 {
     float nuevanota;
+    int id;
 
     cout << "Ingrese ID del alumno: ";
     cin >> id;
@@ -32,13 +35,15 @@ void actualizarNota()
 void actualizarCelular()
 {
     string celular;
+    int id;
+
     cout << "Ingrese ID del alumno" << endl;
     cin >> id;
 
     cout << "Ingrese nuevo celular" << endl;
     cin >> celular;
 
-    string query = "UPDATE alumnos SET celular =" + celular + " WHERE id = " + to_string(id);
+    string query = "UPDATE alumnos SET celular ='" + celular + "' WHERE id = " + to_string(id);
 
     if (msyql_query(conn, query.c_str()) == 0)
     {
