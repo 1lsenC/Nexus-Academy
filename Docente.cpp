@@ -20,12 +20,14 @@ bool loginDocente()
 
     if (user == "docente" && pass == "1234")
     {
-        cout << "Acceso concedido";
+        cout << "Acceso concedido" << endl;
+        ;
         return true;
     }
     else
     {
-        cout << "Acceso denegado";
+        cout << "Acceso denegado" << endl;
+        ;
         return false;
     }
 }

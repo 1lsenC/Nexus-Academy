@@ -47,11 +47,11 @@ void actualizarCelular()
 
     if (msyql_query(conn, query.c_str()) == 0)
     {
-        cout << "Celular actualizado";
+        cout << "Celular actualizado" << endl;
     }
     else
     {
-        cout << "Error al actualizar celular";
+        cout << "Error al actualizar celular" << endl;
     }
 
     return 0;
