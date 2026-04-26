@@ -35,10 +35,12 @@ Al iniciar el programa muestra un menu principal:
 -Alumnos en riesgo: muestra los alumnos con notas mas bajas.
 3. Actualizacion de nota
 -Para poder actualizar la nota le pedira al usuario su USUARIO y PASSWORD, si el acceso es concecido permitira modificar la nota final de un alumno.
+-En USUARIO debe poner "docente", y en PASSWORD debe poner "1234".
 4. Actualizacion de celular
--Para poder actualizar el celular se pide su USUARIO y PASSWORD, si el acceso es concecido, permitira modificar el numero celular de un alumno.
+-Permitira modificar el numero de celular de un alumno.
 5. Salir
 -Cierra el programa y la conexion a MySQL.
+
 De la opcion 1 a 4 se le dejara volver al usuario al menu principal cuando termine de utlizar una opcion, teniedno la posibilidad de usar varias opciones con diferentes alumnos sin la necesidad de conectarse nuevamente al MySQL.
 
 -----------------------------------------------------------------------------------------
